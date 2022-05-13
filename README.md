@@ -1,2 +1,3 @@
 # SubgrupoProyectoTS
-TypeScript Subgrupo Desarrollo de Software
+
+## TypeScript Subgrupo Desarrollo de Software

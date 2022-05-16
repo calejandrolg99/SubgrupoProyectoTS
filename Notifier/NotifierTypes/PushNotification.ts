@@ -1,9 +1,11 @@
 import { Notifier } from "../Notifier";
+import { Observer } from "../Observer";
 
 export class PushNotification extends Notifier {
   //CONSTRUCTOR
-  constructor() {
-    super();
+  constructor(notifier: Notifier) {
+    super(notifier);
+    this.notifier;
   }
 
   //METODO

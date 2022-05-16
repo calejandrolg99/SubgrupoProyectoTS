@@ -1,9 +1,11 @@
 import { Notifier } from "../Notifier";
+import { Observer } from "../Observer";
 
 export class EmailNotifier extends Notifier {
   //CONSTRUCTOR
-  constructor() {
-    super();
+  constructor(notifier: Notifier) {
+    super(notifier);
+    this.notifier;
   }
 
   //METODO

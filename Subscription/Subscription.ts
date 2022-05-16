@@ -1,9 +1,9 @@
 import { PaymentMechanism } from "../PaymentMechanism/PaymentMechanism";
 
 export abstract class Subscription {
-	private mount: number;
-	private status: string;
-	private modality: Modality;
+	protected mount: number;
+	protected status: string;
+	protected modality: Modality;
 
 	constructor(mount: number, status: string, modality: Modality) {
 		this.mount = mount;
@@ -35,7 +35,7 @@ export abstract class Subscription {
 	abstract pay(paymentMechanism: PaymentMechanism);
 }
 
-enum Modality {
+export enum Modality {
 	Normal,
-	WithBenefit,
+	WithBenefits,
 }

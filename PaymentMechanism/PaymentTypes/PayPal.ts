@@ -1,6 +1,6 @@
 import { PaymentMechanism } from "../PaymentMechanism";
 
-class PayPal implements PaymentMechanism {
+export class PayPal implements PaymentMechanism {
 	private password: string;
 	private email: string;
 
@@ -10,6 +10,6 @@ class PayPal implements PaymentMechanism {
 	}
 
 	pay(mount: number) {
-		console.log("Mecanismo de paypal (Servicio externo) " + mount);
+		//Servicio externo de pago con paypal
 	}
 }

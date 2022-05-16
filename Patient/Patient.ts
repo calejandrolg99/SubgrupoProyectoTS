@@ -1,61 +1,77 @@
-class Patient {
-  private name: string;
-  private age: number;
-  private weight: number;
-  private profession: string;
-  private email: string;
+import { PhoneNumber } from "./PhoneNumber";
+import { VenezuelanNumber } from "./Numbers/VenezuelanNumber";
 
-  constructor(
-    name: string,
-    age: number,
-    weight: number,
-    profession: string,
-    email: string
-  ) {
-    this.name = name;
-    this.age = age;
-    this.weight = weight;
-    this.profession = profession;
-    this.email = email;
-  }
+export class Patient {
+	private name: string;
+	private age: number;
+	private weight: number;
+	private profession: string;
+	private email: string;
+	private phones: PhoneNumber[];
 
-  getName(): string {
-    return this.name;
-  }
+	constructor(
+		name: string,
+		age: number,
+		weight: number,
+		profession: string,
+		email: string,
+		phones: PhoneNumber
+	) {
+		this.name = name;
+		this.age = age;
+		this.weight = weight;
+		this.profession = profession;
+		this.email = email;
+		this.phones = [phones];
+	}
 
-  setName(name: string) {
-    this.name = name;
-  }
+	getName(): string {
+		return this.name;
+	}
 
-  getAge(): number {
-    return this.age;
-  }
+	setName(name: string) {
+		this.name = name;
+	}
 
-  setAge(age: number) {
-    this.age = age;
-  }
+	getAge(): number {
+		return this.age;
+	}
 
-  getWeight(): number {
-    return this.weight;
-  }
+	setAge(age: number) {
+		this.age = age;
+	}
 
-  setWeight(weight: number) {
-    this.weight = weight;
-  }
+	getWeight(): number {
+		return this.weight;
+	}
 
-  getProfession(): string {
-    return this.profession;
-  }
+	setWeight(weight: number) {
+		this.weight = weight;
+	}
 
-  setProfession(profession: string) {
-    this.profession = profession;
-  }
+	getProfession(): string {
+		return this.profession;
+	}
 
-  getEmail(): string {
-    return this.email;
-  }
+	setProfession(profession: string) {
+		this.profession = profession;
+	}
 
-  setEmail(email: string) {
-    this.email = email;
-  }
+	getEmail(): string {
+		return this.email;
+	}
+
+	setEmail(email: string) {
+		this.email = email;
+	}
+
+	addNumber(phoneNumber: PhoneNumber) {
+		this.phones.push(phoneNumber);
+	}
+
+	deleteNumber(phone: PhoneNumber) {
+		this.phones.forEach((phoneNumber, index) => {
+			if (phone == phoneNumber) this.phones.splice(index, 1);
+		});
+	}
 }

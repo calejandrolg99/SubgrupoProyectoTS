@@ -5,10 +5,8 @@ export abstract class Notifier {
   protected notifier: Notifier;
 
   //CONSTRUCTOR
-  //constructor() {} POSIBLE SOLUCION(?)
-  constructor(notifier: Notifier) {
-    this.notifier = notifier;
-  }
+  constructor() {}
+  //constructor(notifier: Notifier) {this.notifier = notifier;}
 
   //GETTER Y SETTER
   getNotifier() {

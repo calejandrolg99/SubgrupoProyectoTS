@@ -3,7 +3,7 @@ export abstract class Notifier {
   protected notifier: Notifier;
 
   //CONSTRUCTOR
-  public Notifier(notifier: Notifier) {
+  public constructor(notifier: Notifier) {
     this.notifier = notifier;
   }
 

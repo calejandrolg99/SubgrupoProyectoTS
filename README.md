@@ -6,20 +6,28 @@
 
 #### Alines Ortiz:
 
-Specialty
-Doctor
-Appointment
-Notifier
+##### Specialty
+
+##### Doctor
+
+##### Appointment
+
+##### Notifier
 
 #### Carlos Landaeta:
 
-Memento
-Patient
-Subscription
-PaymentMechanism
+##### Memento
+
+##### Patient
+
+##### Subscription
+
+##### PaymentMechanism
 
 #### Jose Flores
 
-Data
-Builder
-Observer
+##### Data
+
+##### Builder
+
+##### Observer

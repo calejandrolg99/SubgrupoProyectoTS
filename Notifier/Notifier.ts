@@ -1,3 +1,5 @@
+import { Observer } from "../Observer/Observer";
+
 export abstract class Notifier {
   //ATRIBUTOS
   protected notifier: Notifier;
@@ -11,8 +13,9 @@ export abstract class Notifier {
   public getNotifier() {
     return this.notifier;
   }
-  public setNotifier() {
-    this.notifier = notifier: Notifier;
+  
+  public setNotifier(notifier: Notifier) {
+    this.notifier = notifier
   }
 
   //METODO ABSTRACTO

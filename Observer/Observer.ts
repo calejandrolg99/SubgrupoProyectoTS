@@ -1,7 +1,8 @@
+import { Notifier } from "../Notifier/Notifier";
 
 export interface Observer {
 
-    update(context:any):void
+    update(context:Notifier):void
     
 
 }

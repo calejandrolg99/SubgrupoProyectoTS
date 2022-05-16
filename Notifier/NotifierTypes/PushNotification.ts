@@ -1,3 +1,4 @@
+import { Observer } from "../../Observer/Observer";
 import { Notifier } from "../Notifier";
 
 export class PushNotification extends Notifier {

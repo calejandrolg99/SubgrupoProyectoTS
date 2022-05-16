@@ -1,24 +1,23 @@
-import { Notifier } from "../Notifier/Notifier";
-import { Observable } from "../Observer/Observable";
-import { Observer } from "../Observer/Observer";
-import { Data } from "./data";
-import { Field } from "./Field/Field";
-import { FieldNames } from "./Field/FieldEnum";
+import { Notifier } from "../../Notifier/Notifier";
+import { Observable } from "../../Observer/Observable";
+import { Observer } from "../../Observer/Observer";
+import { Data } from "../data";
+import { Field } from "../Field/Field";
+import { FieldNames } from "../Field/FieldEnum";
 
 
 export class History implements Data<Array<Field<FieldNames,any>>,Field<FieldNames,any>>, Observable{
-
+    //ATRIBUTOS
     private fields: Array<Field<FieldNames,any>>;
     private doctor: Observer;
     private patient: Observer;
 
-
+    //CONSTRUCTOR
     constructor(){
         this.fields = new Array<Field<FieldNames,any>>();
     }
 
-
-    //----COMPORTAMIENTO AGREGADO DE OBSERVABLE-------------------------------
+    //METODOS IMPLEMENTADOS DE OBSERVABLE
 
     add(doctor: Observer, patient:Observer): void {
         this.doctor = doctor;
@@ -29,7 +28,7 @@ export class History implements Data<Array<Field<FieldNames,any>>,Field<FieldNam
         this.patient.update(notifier);
     }
 
-    //----COMPORTAMIENTO AGREGADO DE DATA-------------------------------
+    //METODOS IMPLEMENTADOS DE DATA
 
     getValue(): Field<FieldNames,any>[] {
         return this.fields;
@@ -44,7 +43,7 @@ export class History implements Data<Array<Field<FieldNames,any>>,Field<FieldNam
         });
     }
 
-    //----COMPORTAMIENTO PROPIO-------------------------------
+    //METODOS PROPIOS
 
     addField(field: Field<FieldNames,any>):void {
         this.fields.push(field);

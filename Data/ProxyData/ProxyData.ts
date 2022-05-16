@@ -1,9 +1,11 @@
 import { Data } from "../data";
 
 export abstract class ProxyData implements Data<Data<any,any>[],Data<any,any>> {
-    //PROPIEDADES
+    //ATRIBUTOS
     protected data:Data<any,any>;
 
+
+    //CONSTRUCTOR
     constructor(data: Data<any,any>){
         this.data = data;
     }

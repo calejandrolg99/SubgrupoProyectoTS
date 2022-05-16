@@ -4,8 +4,8 @@ import { ProxyData } from "./ProxyData";
 
 
 export class DoctorProxy extends ProxyData {
-    private Doctor: any;
 
+    //METODOS HEREDADOS
     getValue(): Data<any, any>[] {
         if(this.checkAccess()){
             return this.data.getValue();

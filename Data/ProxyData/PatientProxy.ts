@@ -5,6 +5,7 @@ import { ProxyData } from "./ProxyData";
 
 export class PatientProxy extends ProxyData {
 
+    //METODOS HEREDADOS
     getValue(): Data<any, any>[] {
         return this.data.getValue();
     }
@@ -14,7 +15,6 @@ export class PatientProxy extends ProxyData {
         this.checkAccess();
     }
     
-    //METODOS
     checkAccess(): boolean {
         throw new AccessDeniedException();
         

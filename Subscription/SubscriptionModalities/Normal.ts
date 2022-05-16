@@ -8,10 +8,12 @@ class Normal extends Subscription {
 		super(mount, status, modality);
 	}
 
+	//GETTERS Y SETTERS
 	getMount(): number {
 		return this.mount;
 	}
 
+	//METODOS
 	pay(paymentMechanism: PaymentMechanism) {
 		switch (paymentMechanism.constructor) {
 			case CreditCard:

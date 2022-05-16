@@ -1,6 +1,7 @@
 import { PaymentMechanism } from "../PaymentMechanism/PaymentMechanism";
 
 export abstract class Subscription {
+	//ATRIBUTOS
 	protected mount: number;
 	protected status: string;
 	protected modality: Modality;
@@ -11,6 +12,7 @@ export abstract class Subscription {
 		this.modality = modality;
 	}
 
+	//GETTERS Y SETTERS
 	getStatus(): string {
 		return this.status;
 	}
@@ -31,10 +33,12 @@ export abstract class Subscription {
 		this.modality = modality;
 	}
 
+	//METODOS ABSTRACTOS
 	abstract getMount(): number;
 	abstract pay(paymentMechanism: PaymentMechanism);
 }
 
+//TIPO ENUMERADO
 export enum Modality {
 	Normal,
 	WithBenefits,

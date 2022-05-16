@@ -4,6 +4,7 @@ import { PayPal } from "../../PaymentMechanism/PaymentTypes/PayPal";
 import { Subscription, Modality } from "../Subscription";
 
 class WithBenefits extends Subscription {
+	//ATRIBUTOS
 	private reduction: number;
 
 	constructor(
@@ -16,10 +17,12 @@ class WithBenefits extends Subscription {
 		this.reduction = reduction;
 	}
 
+	//GETTERS Y SETTERS
 	getMount(): number {
 		return this.mount - this.reduction;
 	}
 
+	//METODOS
 	pay(paymentMechanism: PaymentMechanism) {
 		switch (paymentMechanism.constructor) {
 			case CreditCard:

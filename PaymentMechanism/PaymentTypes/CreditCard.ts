@@ -1,6 +1,7 @@
 import { PaymentMechanism } from "../PaymentMechanism";
 
 export class CreditCard implements PaymentMechanism {
+	//ATRIBUTOS
 	private password: string;
 	private email: string;
 
@@ -9,6 +10,7 @@ export class CreditCard implements PaymentMechanism {
 		this.email = email;
 	}
 
+	//METODOS
 	pay(mount: number) {
 		//Servicio externo de pago con tarjeta
 	}

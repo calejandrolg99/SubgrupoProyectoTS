@@ -1,13 +1,16 @@
 import { PhoneNumber } from "./PhoneNumber";
-import { VenezuelanNumber } from "./Numbers/VenezuelanNumber";
+import { Subscription } from "../Subscription/Subscription";
+import { PaymentMechanism } from "../PaymentMechanism/PaymentMechanism";
 
 export class Patient {
+	//ATRIBUTOS
 	private name: string;
 	private age: number;
 	private weight: number;
 	private profession: string;
 	private email: string;
 	private phones: PhoneNumber[];
+	private subscription: Subscription;
 
 	constructor(
 		name: string,
@@ -25,6 +28,7 @@ export class Patient {
 		this.phones = [phones];
 	}
 
+	//GETTERS Y SETTERS
 	getName(): string {
 		return this.name;
 	}
@@ -65,8 +69,21 @@ export class Patient {
 		this.email = email;
 	}
 
+	getPhones(): PhoneNumber[] {
+		return this.phones;
+	}
+
+	getSubscription(): Subscription {
+		return this.subscription;
+	}
+
+	//METODOS
 	addNumber(phoneNumber: PhoneNumber) {
 		this.phones.push(phoneNumber);
+	}
+
+	paySubscription(payment: PaymentMechanism) {
+		//	payment.pay();                      //SE PROCEDE AL PAGO
 	}
 
 	deleteNumber(phone: PhoneNumber) {

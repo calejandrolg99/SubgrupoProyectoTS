@@ -11,7 +11,6 @@ export class Remote extends Appointment {
     date: string,
     time: string,
     status: string,
-    doctor: Observer,
     patient: Observer,
     via: string,
     link: string
@@ -22,7 +21,7 @@ export class Remote extends Appointment {
   }
 
   //METODO ABSTRACTO
-  getData(): string {
-    throw new Error("Method not implemented.");
+  getData(): string[] {
+    return new Array(this.date, this.time, this.status, this.via, this.link);
   }
 }

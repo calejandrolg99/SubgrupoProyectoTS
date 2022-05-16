@@ -47,7 +47,7 @@ export abstract class Appointment implements Observable {
   }
 
   //METODO ABSTRACTO
-  abstract getData(): string;
+  abstract getData(): string[];
 
   //METODOS IMPLEMENTADOS DE OBSERVABLE
 

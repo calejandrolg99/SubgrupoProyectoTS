@@ -18,7 +18,7 @@ export class FaceToFace extends Appointment {
   }
 
   //METODO ABSTRACTO
-  getData(): string {
-    throw new Error("Method not implemented.");
+  getData(): string[] {
+    return new Array(this.date, this.time, this.status, this.direccion);
   }
 }

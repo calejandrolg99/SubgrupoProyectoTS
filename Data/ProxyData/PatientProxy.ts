@@ -1,13 +1,23 @@
+import { Data } from "../Data";
+import { AccessDeniedException } from "./AccessDeniedException";
 import { ProxyData } from "./ProxyData";
 
 
 export class PatientProxy extends ProxyData {
-    
-    //METODOS
-    checkAccess(acceser: {name:string}): boolean {
-        if(acceser.name == 'Paciente'){
-            return false;
-        }
+
+    getValue(): Data<any, any>[] {
+        return this.data.getValue();
     }
 
+
+    modifyValue(context: Data<any, any>): void {
+        this.checkAccess();
+    }
+    
+    //METODOS
+    checkAccess(): boolean {
+        throw new AccessDeniedException();
+        
+    }
+        
 }

@@ -1,15 +1,27 @@
+import { Data } from "../Data";
+import { AccessDeniedException } from "./AccessDeniedException";
 import { ProxyData } from "./ProxyData";
 
 
 export class DoctorProxy extends ProxyData {
+    private Doctor: any;
 
-    //METODOS
-    checkAccess(conditions: {ownerSource:string, acceser:string}): boolean {
-
-        if(conditions.ownerSource == conditions.acceser){
-            return true;
+    getValue(): Data<any, any>[] {
+        if(this.checkAccess()){
+            return this.data.getValue();
         }
-        return false;
     }
+
+    modifyValue(context: Data<any, any>): void {
+        if(this.checkAccess()){
+            this.data.modifyValue(context)
+        }
+    }
+
+    checkAccess(): boolean {
+        //AQUI VALIDA SI EL DOCTOR PUEDE ACCEDER A LA HISTORIA
+        throw new AccessDeniedException();
+    }
+
 
 }

@@ -1,25 +1,18 @@
 import { Data } from "../data";
 
-export abstract class ProxyData implements Data<Data<any,any>[],any[]> {
+export abstract class ProxyData implements Data<Data<any,any>[],Data<any,any>> {
     //PROPIEDADES
-    private data:Data<any,any>;
+    protected data:Data<any,any>;
 
     constructor(data: Data<any,any>){
         this.data = data;
     }
 
-
     //METODOS
-    getValue():Data<any,any>[] {
-        return this.data.getValue();
-    }
+    abstract getValue():Data<any,any>[]
 
-    modifyValue(context: any[]): void {
-        if (this.checkAccess(context.pop())) {
-            this.data.modifyValue(context.pop());
-        }
-    }
+    abstract modifyValue(context: Data<any,any>): void
 
-    abstract checkAccess(context: object):boolean
+    abstract checkAccess():boolean
 
 }

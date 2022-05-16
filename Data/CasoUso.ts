@@ -17,7 +17,11 @@ history.addField(field2);
 history.addField(field3);
 history.addField(field4);
 
+try {
+    var proxy = new PatientProxy(history);
+    proxy.modifyValue(field5);
+    console.log(proxy.getValue());
+} catch (error) {
+    console.log(error);
+}
 
-var proxy = new PatientProxy(history);
-proxy.modifyValue([field5,{name:'d'}]);
-console.log(proxy.getValue());

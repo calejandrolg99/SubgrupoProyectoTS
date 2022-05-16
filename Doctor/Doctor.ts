@@ -1,6 +1,6 @@
 import { Appointment } from "../Appointment/Appointment";
 import { Specialty } from "../Specialty/Specialty";
-import { T } from "../Specialty/Enum";
+import { SpecialitiesName } from "../Specialty/SpecialitiesName";
 import { Observer } from "../Observer/Observer";
 import { DataBuilder } from "../Builder/DataBuilder";
 import { Data } from "../Data/Data";
@@ -10,10 +10,10 @@ export abstract class Doctor implements Observer {
   //ATRIBUTOS
   protected name: string;
   protected appointment: Appointment[];
-  protected specialty: Specialty<T>[];
+  protected specialty: Specialty<SpecialitiesName>[];
 
   //CONSTRUCTOR
-  constructor(name: string, specialty: Specialty<T>) {
+  constructor(name: string, specialty: Specialty<SpecialitiesName>) {
     this.name = name;
     this.specialty = [specialty];
   }
@@ -29,7 +29,7 @@ export abstract class Doctor implements Observer {
   getSpecialty() {
     return this.specialty;
   }
-  setSpecialty(specialty: Specialty<T>) {
+  setSpecialty(specialty: Specialty<SpecialitiesName>) {
     this.specialty.push(specialty);
   }
 

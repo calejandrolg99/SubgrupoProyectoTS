@@ -1,7 +1,7 @@
 import { Appointment } from "../../Appointment/Appointment";
 import { DataBuilder } from "../../Builder/DataBuilder";
 import { Data } from "../../Data/Data";
-import { T } from "../../Specialty/Enum";
+import { SpecialitiesName } from "../../Specialty/SpecialitiesName";
 import { Specialty } from "../../Specialty/Specialty";
 import { Doctor } from "../Doctor";
 
@@ -10,7 +10,8 @@ export class Dermatologist extends Doctor {
   protected appointments: Appointment[];
 
   //CONSTRUCTOR
-  constructor(name: string, specialty: Specialty<T>) {
+  constructor(name: string, specialty: Specialty<SpecialitiesName>) {
+    specialty = new Specialty<SpecialitiesName>(SpecialitiesName.Dermatologist);
     super(name, specialty);
   }
 

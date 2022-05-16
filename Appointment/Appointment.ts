@@ -50,7 +50,7 @@ export abstract class Appointment implements Observable {
 
   //METODOS DE INTERFACE OBSERVABLE
   add(...observer: Observer[]): void {
-    throw new Error("Method not implemented.");
+    this.observer.push(observer);
   }
 
   notifyAll(): void {

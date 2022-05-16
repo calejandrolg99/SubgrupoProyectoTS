@@ -1,19 +1,19 @@
-import { T } from "./Enum";
+import { SpecialitiesName } from "./SpecialitiesName";
 
-export class Specialty<T> {
+export class Specialty<SpecialitiesName> {
   //ATRIBUTOS
-  protected nombre: T;
+  protected nombre: SpecialitiesName;
 
   //CONSTRUCTOR
-  constructor(nombre: T) {
+  constructor(nombre: SpecialitiesName) {
     this.nombre = nombre;
   }
 
   //GETTER Y SETTER
-  public getSpecialty(): T {
+  public getSpecialty(): SpecialitiesName {
     return this.nombre;
   }
-  public setSpecialty(nombre: T) {
+  public setSpecialty(nombre: SpecialitiesName) {
     this.nombre = nombre;
   }
 }

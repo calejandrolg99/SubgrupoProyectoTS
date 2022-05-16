@@ -1,9 +1,9 @@
 class Patient {
-  name: string;
-  age: number;
-  weight: number;
-  profession: string;
-  email: string;
+  private name: string;
+  private age: number;
+  private weight: number;
+  private profession: string;
+  private email: string;
 
   constructor(
     name: string,

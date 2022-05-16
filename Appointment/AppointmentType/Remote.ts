@@ -16,7 +16,7 @@ export class Remote extends Appointment {
     via: string,
     link: string
   ) {
-    super(date, time, status, doctor, patient);
+    super(date, time, status, patient);
     this.via = via;
     this.link = link;
   }

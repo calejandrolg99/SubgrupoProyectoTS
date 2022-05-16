@@ -7,21 +7,13 @@ export abstract class Appointment implements Observable {
   protected date: string;
   protected time: string;
   protected status: string;
-  protected doctor: Observer;
   protected patient: Observer;
 
   //CONSTRUCTOR
-  constructor(
-    date: string,
-    time: string,
-    status: string,
-    doctor: Observer,
-    patient: Observer
-  ) {
+  constructor(date: string, time: string, status: string, patient: Observer) {
     this.date = date;
     this.time = time;
     this.status = status;
-    this.doctor = doctor;
     this.patient = patient;
   }
 
@@ -47,13 +39,6 @@ export abstract class Appointment implements Observable {
     this.status = status;
   }
 
-  getDoctor() {
-    return this.doctor;
-  }
-  setDoctor(doctor: Observer) {
-    this.doctor = doctor;
-  }
-
   getPatient() {
     return this.patient;
   }
@@ -66,8 +51,7 @@ export abstract class Appointment implements Observable {
 
   //METODOS IMPLEMENTADOS DE OBSERVABLE
 
-  add(doctor: Observer, patient: Observer): void {
-    this.doctor = doctor;
+  add(patient: Observer): void {
     this.patient = patient;
   }
 

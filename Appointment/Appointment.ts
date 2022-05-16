@@ -1,8 +1,5 @@
+import { Observable } from "../Observer/Observable";
 import { Observer } from "../Observer/Observer";
-import { Observer } from "../Observer/Observable";
-
-import { Specialty } from "../Specialty/Specialty";
-import { T } from "../Specialty/Specialty";
 
 export abstract class Appointment implements Observable {
   //ATRIBUTOS
@@ -50,4 +47,13 @@ export abstract class Appointment implements Observable {
 
   //METODO ABSTRACTO
   abstract getData(): string;
+
+  //METODOS DE INTERFACE OBSERVABLE
+  add(...observer: Observer[]): void {
+    throw new Error("Method not implemented.");
+  }
+
+  notifyAll(): void {
+    throw new Error("Method not implemented.");
+  }
 }

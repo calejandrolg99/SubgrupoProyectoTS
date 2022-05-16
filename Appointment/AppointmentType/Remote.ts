@@ -3,8 +3,14 @@ import { Observer } from "../../Observer/Observer";
 
 export class Remote extends Appointment {
   //CONSTRUCTOR
-  constructor(date: string, time: string, status: string, observer: Observer) {
-    super(date, time, status, observer);
+  constructor(
+    date: string,
+    time: string,
+    status: string,
+    doctor: Observer,
+    patient: Observer
+  ) {
+    super(date, time, status, doctor, patient);
   }
 
   //METODO ABSTRACTO

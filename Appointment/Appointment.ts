@@ -1,3 +1,4 @@
+import { Notifier } from "../Notifier/Notifier";
 import { Observable } from "../Observer/Observable";
 import { Observer } from "../Observer/Observer";
 
@@ -6,14 +7,22 @@ export abstract class Appointment implements Observable {
   protected date: string;
   protected time: string;
   protected status: string;
-  protected observer: Observer;
+  protected doctor: Observer;
+  protected patient: Observer;
 
   //CONSTRUCTOR
-  constructor(date: string, time: string, status: string, observer: Observer) {
+  constructor(
+    date: string,
+    time: string,
+    status: string,
+    doctor: Observer,
+    patient: Observer
+  ) {
     this.date = date;
     this.time = time;
     this.status = status;
-    this.observer = observer;
+    this.doctor = doctor;
+    this.patient = patient;
   }
 
   //GETTER Y SETTER
@@ -38,22 +47,31 @@ export abstract class Appointment implements Observable {
     this.status = status;
   }
 
-  getObserver() {
-    return this.observer;
+  getDoctor() {
+    return this.doctor;
   }
-  setObserver(observer: Observer) {
-    this.observer = observer;
+  setDoctor(doctor: Observer) {
+    this.doctor = doctor;
+  }
+
+  getPatient() {
+    return this.patient;
+  }
+  setPatient(patient: Observer) {
+    this.patient = patient;
   }
 
   //METODO ABSTRACTO
   abstract getData(): string;
 
-  //METODOS DE INTERFACE OBSERVABLE
-  add(...observer: Observer[]): void {
-    this.observer.push(observer);
+  //METODOS IMPLEMENTADOS DE OBSERVABLE
+
+  add(doctor: Observer, patient: Observer): void {
+    this.doctor = doctor;
+    this.patient = patient;
   }
 
-  notifyAll(): void {
-    throw new Error("Method not implemented.");
+  notifyAll(notifier: Notifier): void {
+    this.patient.update(notifier);
   }
 }

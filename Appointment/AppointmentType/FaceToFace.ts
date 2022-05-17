@@ -4,7 +4,7 @@ import { Status } from "../Status";
 
 export class FaceToFace extends Appointment {
   //ATRIBUTOS
-  protected direccion: string;
+  protected address: string;
 
   //CONSTRUCTOR
   constructor(

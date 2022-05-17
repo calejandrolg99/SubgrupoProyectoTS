@@ -1,6 +1,6 @@
 import { Appointment } from "../../Appointment/Appointment";
-import { DataBuilder } from "../../Builder/DataBuilder";
 import { Data } from "../../Data/Data";
+import { DataBuilder } from "../../Data/DataBuilder/DataBuilder";
 import { SpecialitiesName } from "../../Specialty/SpecialitiesName";
 import { Specialty } from "../../Specialty/Specialty";
 import { Doctor } from "../Doctor";
@@ -18,7 +18,7 @@ export class Traumatologist extends Doctor {
   }
 
   //METODOS ABSTRACTOS
-  makeMedicalHistory(builder: DataBuilder): Data {
+  makeMedicalHistory(builder: DataBuilder): Data<any,any> {
     throw new Error("Method not implemented."); ////////////////////////////////////////////////////////////////
   }
 }

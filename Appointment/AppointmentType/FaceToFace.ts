@@ -12,22 +12,22 @@ export class FaceToFace extends Appointment {
     time: string,
     status: Status,
     patient: Observer,
-    direccion: string
+    address: string
   ) {
     super(date, time, status, patient);
-    this.direccion = direccion;
+    this.address = address;
   }
 
   //GETTER Y SETTER
-  getDireccion() {
-    return this.direccion;
+  getAddress() {
+    return this.address;
   }
-  setDireccion(direccion: string) {
-    this.direccion = direccion;
+  setAddress(address: string) {
+    this.address = address;
   }
 
   //METODO ABSTRACTO
   getData(): string[] {
-    return new Array(this.date, this.time, this.direccion);
+    return new Array(this.date, this.time, this.address);
   }
 }

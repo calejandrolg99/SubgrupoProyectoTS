@@ -1,3 +1,4 @@
+import { Memento } from "../Memento/Memento";
 import { Notifier } from "../Notifier/Notifier";
 import { Observable } from "../Observer/Observable";
 import { Observer } from "../Observer/Observer";
@@ -56,7 +57,14 @@ export abstract class Appointment implements Observable {
     this.patient = patient;
   }
 
-  notifyAll(notifier: Notifier): void {
+  notifyall(notifier: Notifier): void {
     this.patient.update(notifier);
   }
+
+  //METODOS HEREDADO DE MEMENTO A TRAVES DE LA IMPLEMENTACION DE OBSERVABLE
+  save(): Memento<any> {
+      return new Memento(this,new Date());
+  }
+
+
 }

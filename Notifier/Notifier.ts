@@ -12,6 +12,7 @@ export abstract class Notifier {
   getNotifier() {
     return this.notifier;
   }
+
   setNotifier(notifier: Notifier) {
     this.notifier = notifier;
   }

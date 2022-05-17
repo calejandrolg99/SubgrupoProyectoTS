@@ -1,8 +1,10 @@
 import { PhoneNumber } from "./PhoneNumber";
 import { Subscription } from "../Subscription/Subscription";
 import { PaymentMechanism } from "../PaymentMechanism/PaymentMechanism";
+import { Observer } from "../Observer/Observer";
+import { Notifier } from "../Notifier/Notifier";
 
-export class Patient {
+export class Patient implements Observer {
 	//ATRIBUTOS
 	private name: string;
 	private age: number;
@@ -90,5 +92,9 @@ export class Patient {
 		this.phones.forEach((phoneNumber, index) => {
 			if (phone == phoneNumber) this.phones.splice(index, 1);
 		});
+	}
+
+	update(context: Notifier): void {
+		context.send(this);
 	}
 }

@@ -25,14 +25,6 @@ class WithBenefits extends Subscription {
 
 	//METODOS
 	pay(paymentMechanism: PaymentMechanism) {
-		switch (paymentMechanism.constructor) {
-			case CreditCard:
-				paymentMechanism.pay(this.mount - this.reduction);
-				break;
-			case PayPal:
-				paymentMechanism.pay(this.mount - this.reduction);
-			default:
-				break;
-		}
+		paymentMechanism.pay(this.mount - this.reduction);
 	}
 }

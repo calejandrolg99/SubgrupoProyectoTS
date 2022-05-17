@@ -1,5 +1,6 @@
 import { Appointment } from "../Appointment";
 import { Observer } from "../../Observer/Observer";
+import { Status } from "../Status";
 
 export class Remote extends Appointment {
   //ATRIBUTO
@@ -10,7 +11,7 @@ export class Remote extends Appointment {
   constructor(
     date: string,
     time: string,
-    status: string,
+    status: Status,
     patient: Observer,
     via: string,
     link: string
@@ -37,6 +38,6 @@ export class Remote extends Appointment {
 
   //METODO ABSTRACTO
   getData(): string[] {
-    return new Array(this.date, this.time, this.status, this.via, this.link);
+    return new Array(this.date, this.time, this.via, this.link);
   }
 }

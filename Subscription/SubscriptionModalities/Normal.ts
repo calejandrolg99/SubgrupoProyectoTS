@@ -16,14 +16,6 @@ class Normal extends Subscription {
 
 	//METODOS
 	pay(paymentMechanism: PaymentMechanism) {
-		switch (paymentMechanism.constructor) {
-			case CreditCard:
-				paymentMechanism.pay(this.mount);
-				break;
-			case PayPal:
-				paymentMechanism.pay(this.mount);
-			default:
-				break;
-		}
+		paymentMechanism.pay(this.mount);
 	}
 }

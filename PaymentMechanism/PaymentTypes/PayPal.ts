@@ -12,6 +12,11 @@ export class PayPal implements PaymentMechanism {
 
 	//METODOS
 	pay(mount: number) {
+		try {
+			//SE INTENTA PAGAR
+		} catch (error) {
+			console.log(error);
+		}
 		//Servicio externo de pago con paypal
 	}
 }

@@ -16,9 +16,6 @@ export class Surgeon extends Doctor {
   }
 
   //METODOS ABSTRACTOS
-  addAppointment(appointment: Appointment) {
-    this.appointments.push(appointment);
-  }
   makeMedicalHistory(builder: DataBuilder): Data {
     throw new Error("Method not implemented."); ////////////////////////////////////////////////////////////
   }

@@ -1,10 +1,10 @@
 import { Appointment } from "../Appointment/Appointment";
-import { Specialty } from "../Specialty/Specialty";
-import { SpecialitiesName } from "../Specialty/SpecialitiesName";
 import { Observer } from "../Observer/Observer";
 import { DataBuilder } from "../Builder/DataBuilder";
 import { Data } from "../Data/Data";
 import { Notifier } from "../Notifier/Notifier";
+import { Specialty } from "../Specialty/Specialty";
+import { SpecialitiesName } from "../Specialty/SpecialitiesName";
 
 export abstract class Doctor implements Observer {
   //ATRIBUTOS
@@ -37,9 +37,16 @@ export abstract class Doctor implements Observer {
     return this.appointment;
   }
 
+  //METODO
+  addAppointment(appointment: Appointment) {}
+
   //METODO ABSTRACTO
-  abstract addAppointment(appointment: Appointment);
   abstract makeMedicalHistory(builder: DataBuilder): Data;
+
+  //METODOS HEREDADO DE MEMENTO A TRAVES DE LA IMPLEMENTACION DE OBSERVABLE
+  save(): Memento<any> {
+    return new Memento(this, new Date());
+  }
 
   //METODO DE INTERFACE OBSERVER
   update(notifier: Notifier) {

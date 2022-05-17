@@ -6,6 +6,7 @@ import { Notifier } from "../Notifier/Notifier";
 import { Specialty } from "../Specialty/Specialty";
 import { SpecialitiesName } from "../Specialty/SpecialitiesName";
 import { Memento } from "../Memento/Memento";
+import { Criteria } from "../Criteria/Criteria";
 
 export abstract class Doctor implements Observer {
   //ATRIBUTOS
@@ -44,7 +45,7 @@ export abstract class Doctor implements Observer {
   }
 
   //METODO ABSTRACTO
-  abstract makeMedicalHistory(builder: DataBuilder): Data<any, any>;
+  abstract makeMedicalHistory(builder: DataBuilder, criteria:Criteria<any,any>): Data<any, any>;
 
   //METODOS HEREDADO DE MEMENTO A TRAVES DE LA IMPLEMENTACION DE OBSERVABLE
   save(): Memento<any> {

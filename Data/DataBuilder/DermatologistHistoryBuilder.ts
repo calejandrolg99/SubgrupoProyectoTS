@@ -1,3 +1,4 @@
+import { BloodPleasure } from "../Field/BloodPressure";
 import { HeartRate } from "../Field/HeartRate";
 import { Height } from "../Field/Height";
 import { PersonalRecords } from "../Field/PersonalRecords";
@@ -8,6 +9,11 @@ import { History } from "../History/History";
 import { HistoryBuilder } from "./HistoryBuilder";
 
 export class DermatologistHistoryBuilder implements HistoryBuilder {
+
+    constructor(){
+        this.history = new History();
+    }
+
     //ATRIBUTOS
     private history: History
 
@@ -34,6 +40,10 @@ export class DermatologistHistoryBuilder implements HistoryBuilder {
 
     buildPersonalRecords(value:string): void {
         this.history.addField(new PersonalRecords(value));
+    }
+
+    buildBloodPressure(value: number): void {
+        this.history.addField(new BloodPleasure(value));
     }
 
     //METODOS PROPIOS

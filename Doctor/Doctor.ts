@@ -30,9 +30,6 @@ export abstract class Doctor implements Observer {
   getSpecialty() {
     return this.specialty;
   }
-  setSpecialty(specialty: Specialty<SpecialitiesName>) {
-    this.specialty.push(specialty);
-  }
 
   getAppointment() {
     return this.appointment;
@@ -41,6 +38,10 @@ export abstract class Doctor implements Observer {
   //METODO
   addAppointment(appointment: Appointment) {
     this.appointment.push(appointment);
+  }
+
+  addSpecialty(specialty: Specialty<SpecialitiesName>) {
+    this.specialty.push(specialty);
   }
 
   //METODO ABSTRACTO

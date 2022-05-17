@@ -1,7 +1,8 @@
 import { PaymentMechanism } from "../../PaymentMechanism/PaymentMechanism";
 import { CreditCard } from "../../PaymentMechanism/PaymentTypes/CreditCard";
 import { PayPal } from "../../PaymentMechanism/PaymentTypes/PayPal";
-import { Subscription, Modality } from "../Subscription";
+import { Subscription } from "../Subscription";
+import { Modality } from "../ModalityEnum";
 
 class Normal extends Subscription {
 	constructor(mount: number, status: string, modality: Modality) {

@@ -1,4 +1,5 @@
 import { PaymentMechanism } from "../PaymentMechanism/PaymentMechanism";
+import { Modality } from "./ModalityEnum";
 
 export abstract class Subscription {
 	//ATRIBUTOS
@@ -36,10 +37,4 @@ export abstract class Subscription {
 	//METODOS ABSTRACTOS
 	abstract getMount(): number;
 	abstract pay(paymentMechanism: PaymentMechanism);
-}
-
-//TIPO ENUMERADO
-export enum Modality {
-	Normal,
-	WithBenefits,
 }

@@ -39,7 +39,9 @@ export abstract class Doctor implements Observer {
   }
 
   //METODO
-  addAppointment(appointment: Appointment) {}
+  addAppointment(appointment: Appointment) {
+    this.appointment.push(appointment);
+  }
 
   //METODO ABSTRACTO
   abstract makeMedicalHistory(builder: DataBuilder): Data<any, any>;

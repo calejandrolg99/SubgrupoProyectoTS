@@ -7,9 +7,9 @@ import { Field } from "../Field/Field";
 import { FieldNames } from "../Field/FieldEnum";
 
 
-export class History implements Data<Array<Field<FieldNames,any>>,Field<FieldNames,any>>, Observable{
+export class History implements Data<Data<any,any>[],Data<any,any>>, Observable{
     //ATRIBUTOS
-    private fields: Array<Field<FieldNames,any>>;
+    private fields: Array<Data<any,any>>;
     private doctor: Observer;
     private patient: Observer;
 
@@ -36,14 +36,14 @@ export class History implements Data<Array<Field<FieldNames,any>>,Field<FieldNam
 
     //METODOS IMPLEMENTADOS DE DATA
 
-    getValue(): Field<FieldNames,any>[] {
+    getValue(): Data<any,any>[] {
         return this.fields;
     }
  
-    modifyValue(context: Field<FieldNames,any>): void {
+    modifyValue(context: Data<any,any>): void {
 
         this.fields.forEach(element => {
-            if (element.getname() == context.getname()){
+            if (element.constructor.name == context.constructor.name){
                 element.modifyValue(context.getValue())
             }
         });
@@ -51,7 +51,7 @@ export class History implements Data<Array<Field<FieldNames,any>>,Field<FieldNam
 
     //METODOS PROPIOS
 
-    addField(field: Field<FieldNames,any>):void {
+    addField(field: Data<any,any>):void {
         this.fields.push(field);
     }
  

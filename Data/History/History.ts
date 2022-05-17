@@ -1,3 +1,4 @@
+import { Memento } from "../../Memento/Memento";
 import { Notifier } from "../../Notifier/Notifier";
 import { Observable } from "../../Observer/Observable";
 import { Observer } from "../../Observer/Observer";
@@ -15,6 +16,11 @@ export class History implements Data<Array<Field<FieldNames,any>>,Field<FieldNam
     //CONSTRUCTOR
     constructor(){
         this.fields = new Array<Field<FieldNames,any>>();
+    }
+
+    //METODOS HEREDADO DE MEMENTO A TRAVES DE LA IMPLEMENTACION DE OBSERVABLE
+    save(): Memento<any> {
+        return new Memento(this,new Date());
     }
 
     //METODOS IMPLEMENTADOS DE OBSERVABLE

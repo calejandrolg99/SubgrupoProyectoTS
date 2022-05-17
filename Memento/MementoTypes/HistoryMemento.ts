@@ -1,10 +1,11 @@
+import { History } from "../../Data/History/History";
 import { Memento } from "../Memento";
 
-class HistoryMemento extends Memento<any> {
+export class HistoryMemento extends Memento<any> {
 	//ATRIBUTOS
 	private access: string;
 
-	constructor(state: Data, date: Date, access: string) {
+	constructor(state: History, date: Date, access: string) {
 		super(state, date);
 		this.access = access;
 	}

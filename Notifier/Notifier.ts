@@ -5,17 +5,16 @@ export abstract class Notifier {
   protected notifier: Notifier;
 
   //CONSTRUCTOR
-  public Notifier(notifier: Notifier) {
-    this.notifier = notifier;
-  }
+  constructor() {}
+  //constructor(notifier: Notifier) {this.notifier = notifier;}
 
   //GETTER Y SETTER
-  public getNotifier() {
+  getNotifier() {
     return this.notifier;
   }
-  
-  public setNotifier(notifier: Notifier) {
-    this.notifier = notifier
+
+  setNotifier(notifier: Notifier) {
+    this.notifier = notifier;
   }
 
   //METODO ABSTRACTO

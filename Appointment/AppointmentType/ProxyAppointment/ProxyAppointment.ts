@@ -3,7 +3,7 @@ import { Observer } from "../../../Observer/Observer";
 import { AccessDeniedException } from "./AccesDeniedException";
 import { Status } from "../../Status";
 
-export class ProxyAppointment extends Appointment implements Appointment {
+export class ProxyAppointment extends Appointment {
   //ATRIBUTOS
   protected appointment: Appointment;
 

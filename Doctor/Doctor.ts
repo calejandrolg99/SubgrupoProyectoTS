@@ -5,6 +5,7 @@ import { Data } from "../Data/Data";
 import { Notifier } from "../Notifier/Notifier";
 import { Specialty } from "../Specialty/Specialty";
 import { SpecialitiesName } from "../Specialty/SpecialitiesName";
+import { Memento } from "../Memento/Memento";
 
 export abstract class Doctor implements Observer {
   //ATRIBUTOS

@@ -6,6 +6,7 @@ import { Notifier } from "../Notifier/Notifier";
 import { Specialty } from "../Specialty/Specialty";
 import { SpecialitiesName } from "../Specialty/SpecialitiesName";
 import { Memento } from "../Memento/Memento";
+import { Criteria } from "../Criteria/Criteria";
 
 export abstract class Doctor implements Observer {
   //ATRIBUTOS
@@ -30,9 +31,6 @@ export abstract class Doctor implements Observer {
   getSpecialty() {
     return this.specialty;
   }
-  setSpecialty(specialty: Specialty<SpecialitiesName>) {
-    this.specialty.push(specialty);
-  }
 
   getAppointment() {
     return this.appointment;
@@ -43,8 +41,12 @@ export abstract class Doctor implements Observer {
     this.appointment.push(appointment);
   }
 
+  addSpecialty(specialty: Specialty<SpecialitiesName>) {
+    this.specialty.push(specialty);
+  }
+
   //METODO ABSTRACTO
-  abstract makeMedicalHistory(builder: DataBuilder): Data<any, any>;
+  abstract makeMedicalHistory(builder: DataBuilder, criteria:Criteria<any,any>): Data<any, any>;
 
   //METODOS HEREDADO DE MEMENTO A TRAVES DE LA IMPLEMENTACION DE OBSERVABLE
   save(): Memento<any> {

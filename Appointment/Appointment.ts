@@ -2,16 +2,17 @@ import { Memento } from "../Memento/Memento";
 import { Notifier } from "../Notifier/Notifier";
 import { Observable } from "../Observer/Observable";
 import { Observer } from "../Observer/Observer";
+import { Status } from "./Status";
 
 export abstract class Appointment implements Observable {
   //ATRIBUTOS
   protected date: string;
   protected time: string;
-  protected status: string;
+  protected status: Status;
   protected patient: Observer;
 
   //CONSTRUCTOR
-  constructor(date: string, time: string, status: string, patient: Observer) {
+  constructor(date: string, time: string, status: Status, patient: Observer) {
     this.date = date;
     this.time = time;
     this.status = status;
@@ -36,7 +37,7 @@ export abstract class Appointment implements Observable {
   getStatus() {
     return this.status;
   }
-  setStatus(status: string) {
+  setStatus(status: Status) {
     this.status = status;
   }
 

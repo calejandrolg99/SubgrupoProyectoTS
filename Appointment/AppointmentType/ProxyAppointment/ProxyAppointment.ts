@@ -1,6 +1,7 @@
 import { Appointment } from "../../Appointment";
 import { Observer } from "../../../Observer/Observer";
 import { AccessDeniedException } from "./AccesDeniedException";
+import { Status } from "../../Status";
 
 export class ProxyAppointment extends Appointment implements Appointment {
   //ATRIBUTOS
@@ -10,7 +11,7 @@ export class ProxyAppointment extends Appointment implements Appointment {
   constructor(
     date: string,
     time: string,
-    status: string,
+    status: Status,
     observer: Observer,
     appointment: Appointment
   ) {
@@ -25,7 +26,7 @@ export class ProxyAppointment extends Appointment implements Appointment {
 
   //METODO ABSTRACTO
   getData(): string[] {
-    return new Array(this.date, this.time, this.status);
+    return new Array(this.date, this.time);
   }
 
   //METODO

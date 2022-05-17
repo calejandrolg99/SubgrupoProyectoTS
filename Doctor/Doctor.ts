@@ -1,6 +1,6 @@
 import { Appointment } from "../Appointment/Appointment";
 import { Observer } from "../Observer/Observer";
-import { DataBuilder } from "../Builder/DataBuilder";
+import { DataBuilder } from "../Data/DataBuilder/DataBuilder";
 import { Data } from "../Data/Data";
 import { Notifier } from "../Notifier/Notifier";
 import { Specialty } from "../Specialty/Specialty";
@@ -53,6 +53,6 @@ export abstract class Doctor implements Observer {
 
   //METODO DE INTERFACE OBSERVER
   update(notifier: Notifier) {
-    throw new Error("Method not implemented.");
+    notifier.send(this);
   }
 }

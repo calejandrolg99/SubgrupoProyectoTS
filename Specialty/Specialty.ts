@@ -1,19 +1,17 @@
-import { SpecialitiesName } from "./SpecialitiesName";
-
-export class Specialty<SpecialitiesName> {
+export class Specialty<T> {
   //ATRIBUTOS
-  protected nombre: SpecialitiesName;
+  protected nombre: T;
 
   //CONSTRUCTOR
-  constructor(nombre: SpecialitiesName) {
+  constructor(nombre: T) {
     this.nombre = nombre;
   }
 
   //GETTER Y SETTER
-  public getSpecialty(): SpecialitiesName {
+  public getSpecialty(): T {
     return this.nombre;
   }
-  public setSpecialty(nombre: SpecialitiesName) {
+  public setSpecialty(nombre: T) {
     this.nombre = nombre;
   }
 }

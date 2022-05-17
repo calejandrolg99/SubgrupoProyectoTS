@@ -17,6 +17,14 @@ export class FaceToFace extends Appointment {
     this.direccion = direccion;
   }
 
+  //GETTER Y SETTER
+  getDireccion() {
+    return this.direccion;
+  }
+  setDireccion(direccion: string) {
+    this.direccion = direccion;
+  }
+
   //METODO ABSTRACTO
   getData(): string[] {
     return new Array(this.date, this.time, this.status, this.direccion);

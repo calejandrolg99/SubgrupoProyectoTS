@@ -20,6 +20,21 @@ export class Remote extends Appointment {
     this.link = link;
   }
 
+  //GETTER Y SETTER
+  getVia() {
+    return this.via;
+  }
+  setVia(via: string) {
+    this.via = via;
+  }
+
+  getLink() {
+    return this.link;
+  }
+  setLink(link: string) {
+    this.link = link;
+  }
+
   //METODO ABSTRACTO
   getData(): string[] {
     return new Array(this.date, this.time, this.status, this.via, this.link);

@@ -42,7 +42,7 @@ export abstract class Doctor implements Observer {
   addAppointment(appointment: Appointment) {}
 
   //METODO ABSTRACTO
-  abstract makeMedicalHistory(builder: DataBuilder): Data;
+  abstract makeMedicalHistory(builder: DataBuilder): Data<any, any>;
 
   //METODOS HEREDADO DE MEMENTO A TRAVES DE LA IMPLEMENTACION DE OBSERVABLE
   save(): Memento<any> {
